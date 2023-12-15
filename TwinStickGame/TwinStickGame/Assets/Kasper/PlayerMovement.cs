@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Transform>().position =+ new Vector3(speed * Input.GetAxis("Horizontal"), 0, 0);
+        GetComponent<Transform>().position = new Vector3(speed * Input.GetAxis("Horizontal"), 0, 0);
     }
 
     void FixedUpdate()
