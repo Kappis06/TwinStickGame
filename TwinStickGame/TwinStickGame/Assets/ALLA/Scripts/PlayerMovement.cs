@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (/*playerHealth <= 0 &&*/ gameActive)
+        /*if (playerHealth <= 0 && gameActive)
         {
             gameActive = false;
 
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
             //FindObjectOfType<AudioManager>().Play("peter griffin");
 
             //blood.transform.localScale = new Vector3(1, 1, 1);
-        }
+        }*/
         
         GetInput();
 
