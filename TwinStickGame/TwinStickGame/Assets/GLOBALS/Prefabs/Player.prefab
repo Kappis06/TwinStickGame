@@ -182,10 +182,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d578f61cfbaf6b14ca4ed6e145601019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rb: {fileID: 0}
-  Collider: {fileID: 0}
+  Rb: {fileID: 1140631489611061503}
+  Collider: {fileID: 1140631489611061500}
   Cam: {fileID: 0}
-  PlayerStartSpeed: 0
+  PlayerStartSpeed: 5
   _sprintTime: 0
   SprintStartTime: 0
   restartAnytime: 1
