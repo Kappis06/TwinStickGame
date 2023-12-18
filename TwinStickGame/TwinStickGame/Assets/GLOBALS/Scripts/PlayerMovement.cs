@@ -103,8 +103,8 @@ public class PlayerMovement : MonoBehaviour
 
     void GetInput()
     {
-        _movement.x = Input.GetAxisRaw("Horizontal_R");
-        _movement.y = Input.GetAxisRaw("Vertical_R");
+        _movement.x = Input.GetAxisRaw("Horizontal_L");
+        _movement.y = Input.GetAxisRaw("Vertical_L");
 
         _mousePos = Cam.ScreenToWorldPoint(Input.mousePosition);
     }
