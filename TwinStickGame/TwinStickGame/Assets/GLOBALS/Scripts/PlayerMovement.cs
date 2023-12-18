@@ -20,10 +20,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Player Stats")]
 
     float _playerSpeed;
-    public float PlayerStartSpeed;
+    public float PlayerStartSpeed = 5;
 
-    [SerializeField] float _sprintTime;
-    public float SprintStartTime;
+    float _sprintTime;
+    public float SprintStartTime = 5;
 
     //private float playerHealth;
 
