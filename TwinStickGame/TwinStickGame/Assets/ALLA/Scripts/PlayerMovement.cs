@@ -89,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
         gameActive = true;
 
         //playerHealth = playerHealthMax;
-        playerSpeed = 5f;
     }
 
     void GetInput()
