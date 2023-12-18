@@ -101,7 +101,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -182,10 +182,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d578f61cfbaf6b14ca4ed6e145601019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1140631489611061503}
-  collider: {fileID: 1140631489611061500}
-  cam: {fileID: 0}
-  playerSpeed: 5
+  Rb: {fileID: 0}
+  Collider: {fileID: 0}
+  Cam: {fileID: 0}
+  PlayerStartSpeed: 0
+  _sprintTime: 0
+  SprintStartTime: 0
   restartAnytime: 1
   gameActive: 0
   dmgCooldown:
