@@ -5,26 +5,39 @@ using UnityEngine;
 public class DoorBehavior : MonoBehaviour
 {
 
-    Collision2D _collision;
-    Collider2D _colider;
+    public Collision2D _collision;
+    public Collider2D _colider;
+
+    [SerializeField] public bool coliding = false;
+
+    private bool _openDoor;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _colider.enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        _openDoor = Input.GetKey(KeyCode.JoystickButton1);
+        coliding = false;
     }
 
     void FixedUpdate()
     {
-        //if (_colider.IsTouching() && Input.GetKey("Fire1"))
-        //{
-        //    _colider.enabled = false;
-        //}
+        
+        
+
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (_openDoor)
+        {
+            _colider.enabled = false;
+        }
+        coliding = true;
     }
 }

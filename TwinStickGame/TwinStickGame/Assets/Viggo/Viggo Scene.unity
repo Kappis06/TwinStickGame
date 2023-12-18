@@ -123,6 +123,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &342536774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4451333743749289797, guid: 5c9723cb1011c2e47bfaefb831fcee82, type: 3}
+  m_PrefabInstance: {fileID: 4278355350930721243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &342536775 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7549789981264476298, guid: 5c9723cb1011c2e47bfaefb831fcee82, type: 3}
+  m_PrefabInstance: {fileID: 4278355350930721243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &342536778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342536774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5827246acce28984d8653e6dec2f2419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colider: {fileID: 342536775}
+  coliding: 0
 --- !u!4 &391401344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1140631489111795147, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
@@ -492,10 +516,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    - target: {fileID: 7549789981264476298, guid: 5c9723cb1011c2e47bfaefb831fcee82, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7821184046486524481, guid: 5c9723cb1011c2e47bfaefb831fcee82, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -540,5 +560,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8919259243590262889, guid: 5c9723cb1011c2e47bfaefb831fcee82, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5c9723cb1011c2e47bfaefb831fcee82, type: 3}
