@@ -8,18 +8,23 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("References")]
     
-    public Rigidbody2D rb;
-    new public Collider2D collider;
-    public Camera cam;
+    public Rigidbody2D Rb;
+    new public Collider2D Collider;
+    public Camera Cam;
     //public Text playerHealthUI;
     //public GameObject bloodPrefab;
 
-    Vector2 movement;
-    Vector2 mousePos;
+    Vector2 _movement;
+    Vector2 _mousePos;
 
     [Header("Player Stats")]
 
-    public float playerSpeed;
+    float _playerSpeed;
+    public float PlayerStartSpeed;
+
+    [SerializeField] float _sprintTime;
+    public float SprintStartTime;
+
     //private float playerHealth;
 
     //public float playerHealthMax;
@@ -55,10 +60,13 @@ public class PlayerMovement : MonoBehaviour
 
             //blood.transform.localScale = new Vector3(1, 1, 1);
         }*/
-        
+
+
         GetInput();
 
         UpdateUI();
+
+        Sprinting();
     }
 
     void FixedUpdate()
@@ -88,15 +96,35 @@ public class PlayerMovement : MonoBehaviour
     {
         gameActive = true;
 
+        _playerSpeed = PlayerStartSpeed;
+        _sprintTime = SprintStartTime;
         //playerHealth = playerHealthMax;
     }
 
     void GetInput()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        _movement.x = Input.GetAxisRaw("Horizontal");
+        _movement.y = Input.GetAxisRaw("Vertical");
 
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        _mousePos = Cam.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    void Sprinting()
+    {
+        if (Input.GetKey(KeyCode.JoystickButton3) && _sprintTime >= 0)
+        {
+            _playerSpeed = 10;
+            _sprintTime -= 0.05f; 
+        }
+        else
+        {
+            _playerSpeed = PlayerStartSpeed;
+
+            if (_sprintTime < SprintStartTime)
+            {
+                _sprintTime += 0.005f;
+            }
+        }
     }
 
     void UpdateUI()
@@ -106,11 +134,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Act()
     {
-        rb.MovePosition(rb.position + movement * playerSpeed * Time.fixedDeltaTime);
+        Rb.MovePosition(Rb.position + _movement * _playerSpeed * Time.fixedDeltaTime);
 
-        Vector2 lookDir = mousePos - rb.position;
+        Vector2 lookDir = _mousePos - Rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        Rb.rotation = angle;
     }
 
     void OnCollisionStay2D(Collision2D collision)
