@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.JoystickButton3) && _sprintTime >= 0)
         {
             _playerSpeed = 10;
-            _sprintTime -= 0.05f; 
+            _sprintTime -= Time.deltaTime; 
         }
         else
         {
@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (_sprintTime < SprintStartTime)
             {
-                _sprintTime += 0.005f;
+                _sprintTime += Time.deltaTime;
             }
         }
     }
