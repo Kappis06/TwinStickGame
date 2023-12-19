@@ -25,9 +25,9 @@ public class PlayerMovement : MonoBehaviour
     float _sprintTime;
     public float SprintStartTime = 5;
 
-    //private float playerHealth;
+    private float playerHealth;
 
-    //public float playerHealthMax;
+    public float playerHealthMax;
 
     public bool restartAnytime = false;
 
@@ -46,20 +46,20 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        /*if (playerHealth <= 0 && gameActive)
+        if (playerHealth <= 0 && gameActive)
         {
             gameActive = false;
 
-            rb.bodyType = RigidbodyType2D.Static;
+            Rb.bodyType = RigidbodyType2D.Static;
 
-            collider.enabled = false;
+            Collider.enabled = false;
 
             //GameObject blood = Instantiate(bloodPrefab, gameObject.transform.position, gameObject.transform.rotation);
 
             //FindObjectOfType<AudioManager>().Play("peter griffin");
 
             //blood.transform.localScale = new Vector3(1, 1, 1);
-        }*/
+        }
 
 
         GetInput();
@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
 
         _playerSpeed = PlayerStartSpeed;
         _sprintTime = SprintStartTime;
-        //playerHealth = playerHealthMax;
+        playerHealth = playerHealthMax;
     }
 
     void GetInput()
@@ -143,13 +143,13 @@ public class PlayerMovement : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        /*if (dmgCooldown.IsCoolingDown) return;
+        if (dmgCooldown.IsCoolingDown) return;
         
-        if (collision.gameObject.layer == 9 && gameActive)
+        if ((collision.gameObject.layer == LayerMask.NameToLayer("Enemy")) && gameActive)
         {
             playerHealth--;
 
             dmgCooldown.StartCooldown();
-        }*/
+        }
     }
 }

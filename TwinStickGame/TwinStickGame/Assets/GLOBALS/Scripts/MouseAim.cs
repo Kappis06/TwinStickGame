@@ -12,25 +12,36 @@ public class MouseAim : MonoBehaviour
 
     float threshold;
 
-    public Vector3 joystickMulti;
     public Vector3 joystickInput;
-    public Vector3 joystickResult;
+    public Vector3 mousePos;
+    public Vector3 targetPos;
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetAxisRaw("Aim") > 0.5)
             threshold = maxThreshold;
         else
             threshold = minThreshold;
 
 
+        joystickInput = new Vector3((Screen.width / 2) * Input.GetAxisRaw("Horizontal_R"), (Screen.height / 2) * Input.GetAxisRaw("Vertical_R"), 0);
+        /*if (Mathf.Abs(joystickInput.x) < 20)
+        {
+            joystickInput.x = 0;
+        }
+        if (Mathf.Abs(joystickInput.y) < 20)
+        {
+            joystickInput.y = 0;
+        }*/
 
-        //Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        joystickMulti = new Vector3(14, 7, 0);
-        joystickInput = new Vector3(Input.GetAxis("Horizontal_R"), Input.GetAxis("Vertical_R"), 0);
-        joystickResult = new Vector3(joystickMulti.x * joystickInput.x, joystickMulti.y * joystickInput.y, joystickMulti.z * joystickInput.z);
+        mousePos = cam.ScreenToWorldPoint(/*Input.mousePosition*/ joystickInput);
 
-        Vector3 targetPos = (player.position + joystickResult /*mousePos*/) / 2f;
+
+        //joystickMulti = new Vector3(14, 7, 0);
+        //joystickInput = new Vector3(Input.GetAxis("Horizontal_R"), Input.GetAxis("Vertical_R"), 0);
+        //joystickResult = new Vector3(joystickMulti.x * joystickInput.x, joystickMulti.y * joystickInput.y, 0);
+
+        targetPos = (player.position + joystickInput /*mousePos*/) / 2f;
 
         targetPos.x = Mathf.Clamp(targetPos.x, - threshold + player.position.x, threshold + player.position.x);
         targetPos.y = Mathf.Clamp(targetPos.y, - threshold + player.position.y, threshold + player.position.y);
