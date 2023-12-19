@@ -57,7 +57,7 @@ void Start()
         //_rigidbody2D.MovePosition(_rigidbody2D.position + _movement * _playerSpeed * Time.fixedDeltaTime);
 
         Vector2 lookDir = new Vector2((_rigidbody2D.position.x - _lastPos.x),(_rigidbody2D.position.y - _lastPos.y));
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg ;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         _rigidbody2D.rotation = angle;
     }
 }
