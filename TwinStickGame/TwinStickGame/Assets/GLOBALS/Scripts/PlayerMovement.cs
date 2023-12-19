@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     
     public Rigidbody2D Rb;
-    new public Collider2D Collider;
+    public Collider2D Collider;
     public Camera Cam;
     //public Text playerHealthUI;
     //public GameObject bloodPrefab;
