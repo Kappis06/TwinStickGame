@@ -69,24 +69,21 @@ void Start()
             Vector2 lookDir = new Vector2(_rigidbody2D.position.x - _lastPos.x, _rigidbody2D.position.y - _lastPos.y);
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
             _rigidbody2D.rotation = angle;
+
+            _lastPos = _rigidbody2D.position;
+            _rigidbody2D.MovePosition(position);
         }
         else if (!_idle)
         {
-            Transform target = GameObject.Find("Player").transform;            
+            Transform target = GameObject.Find("Player").transform;
+            
             Vector2 lookDir = (Vector2)target.position - _rigidbody2D.position;
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
             _rigidbody2D.rotation = angle;
             Debug.Log(angle);
 
-            //position = new Vector2((GameObject.Find("Player").transform.position.x - position.x) + Time.fixedDeltaTime * Speed,
-            //                                     (GameObject.Find("Player").transform.position.y - position.y) + Time.fixedDeltaTime * Speed);
-            
-            
-           // _rigidbody2D.velocity = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * Speed ;
-            _rigidbody2D.position += new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * Speed * Time.deltaTime;
+            _rigidbody2D.velocity = transform.up * Speed;
         }
 
-        _lastPos = _rigidbody2D.position;
-        //_rigidbody2D.MovePosition(position);
     }
 }
