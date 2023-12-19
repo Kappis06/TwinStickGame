@@ -119,9 +119,9 @@ MonoBehaviour:
   player: {fileID: 1140631489611061490}
   minThreshold: 0.5
   maxThreshold: 5
-  joystickMulti: {x: 0, y: 0, z: 0}
   joystickInput: {x: 0, y: 0, z: 0}
-  joystickResult: {x: 0, y: 0, z: 0}
+  mousePos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1140631489611061502
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +264,7 @@ MonoBehaviour:
   Cam: {fileID: 0}
   PlayerStartSpeed: 5
   SprintStartTime: 0
+  playerHealthMax: 3
   restartAnytime: 1
   gameActive: 0
   dmgCooldown:
@@ -280,3 +281,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeab012b90bbbcc4fa51294eba74f5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Beloning: {fileID: 0}
