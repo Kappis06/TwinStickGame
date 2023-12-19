@@ -7389,6 +7389,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1140631489611061503, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1140631489611061503, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
+      propertyPath: m_SleepingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
 --- !u!20 &1616380055 stripped
@@ -7405,19 +7413,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 168421557051892235, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
       propertyPath: Both
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 168421557051892235, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
       propertyPath: BackAndForthVertical
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 168421557051892235, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
       propertyPath: BackAndForthHorizontal
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 605720579017871920, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 605720579017871921, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 605720579017871932, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
       propertyPath: m_RootOrder
@@ -7425,11 +7437,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 605720579017871932, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 605720579017871932, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 605720579017871932, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
       propertyPath: m_LocalPosition.z
