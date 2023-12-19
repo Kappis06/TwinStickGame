@@ -14,7 +14,6 @@ public class EnemyController : MonoBehaviour
     public float BackAndForthHorizontal = 5f;
 
     Rigidbody2D _rigidbody2D;
-    float _totalTime;
     Vector2 _lastPos;
    public  bool _idle = true;
     
@@ -53,17 +52,17 @@ void Start()
             if (Vertical && !Both)
             {
                 //position.y = position.y + Time.deltaTime * Speed * _direction;
-                position.y = position.y + Mathf.Cos(Time.time * Speed) * (BackAndForthVertical / 100);
+                position.y = position.y + Mathf.Sin(Time.fixedTime * Speed) * (BackAndForthVertical / 100);
             }
             else if (Both && !Vertical)
             {
-                position.y = position.y + Mathf.Cos(_totalTime * Speed) * (BackAndForthVertical / 100);
-                position.x = position.x + Mathf.Cos(_totalTime * Speed + (Mathf.PI / 2)) * (BackAndForthVertical / 100);
+                position.y = position.y + Mathf.Sin(Time.fixedTime * Speed) * (BackAndForthVertical / 100) * Speed;
+                position.x = position.x + Mathf.Cos(Time.fixedTime * Speed) * (BackAndForthHorizontal / 100) * Speed;
             }
             else
             {
                 //position.x = position.x + Time.deltaTime * Speed * _direction;
-                position.x = position.x + Mathf.Cos(_totalTime * Speed) * (BackAndForthVertical / 100);
+                position.x = position.x + Mathf.Cos(Time.fixedTime * Speed) * (BackAndForthVertical / 100);
             }
 
             Vector2 lookDir = new Vector2(_rigidbody2D.position.x - _lastPos.x, _rigidbody2D.position.y - _lastPos.y);
