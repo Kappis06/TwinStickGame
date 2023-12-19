@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D Rb;
     public Collider2D Collider;
     public Camera Cam;
+
+    public GameObject Spawn;
     //public Text playerHealthUI;
     //public GameObject bloodPrefab;
 
@@ -101,6 +103,8 @@ public class PlayerMovement : MonoBehaviour
         _playerSpeed = PlayerStartSpeed;
         _sprintTime = SprintStartTime;
         playerHealth = playerHealthMax;
+
+        transform.position = Spawn.transform.position;
     }
 
     void GetInput()
@@ -143,7 +147,7 @@ public class PlayerMovement : MonoBehaviour
             lookDir = new Vector2(Input.GetAxisRaw("Horizontal_R"), Input.GetAxisRaw("Vertical_R"))/*_mousePos - Rb.position*/;
         }
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        Rb.rotation = angle;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     void OnCollisionStay2D(Collision2D collision)
