@@ -7,13 +7,10 @@ public class EnemyController : MonoBehaviour
     public float Speed = 2.0f;
     public bool Vertical;
     public bool Both;
-    public float ChangeTime = 3.0f;
     public float BackAndForthVertical = 5f;
     public float BackAndForthHorizontal = 5f;
 
     Rigidbody2D _rigidbody2D;
-    float _timer;
-    int _direction = 1;
     float _totalTime;
     Vector2 _lastPos;
     
@@ -22,7 +19,6 @@ public class EnemyController : MonoBehaviour
 void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _timer = ChangeTime;
     }
 
     void Update()
