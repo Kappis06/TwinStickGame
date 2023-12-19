@@ -31,7 +31,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
-    void pause ()
+    void pause () //8:00 video brackeys
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
