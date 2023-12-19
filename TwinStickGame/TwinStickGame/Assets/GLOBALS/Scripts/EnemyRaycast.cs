@@ -11,7 +11,7 @@ public class EnemyRaycast : MonoBehaviour
 
     bool _onLastSeenPos = true;
 
-    RaycastHit2D ray;
+     
 
     // Start is called before the first frame update
     void Start()
@@ -46,12 +46,12 @@ public class EnemyRaycast : MonoBehaviour
     
     private void FixedUpdate()
     {
-        ray = Physics2D.Raycast(transform.position, _player.transform.position - transform.position);
-        //Physics2D.CapsuleCast(transform.position, new Vector2(10, 5),  )
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, _player.transform.position - transform.position);
+
 
         if (ray.collider != null)
         {
-            _hasLineOfSight = ray.collider.CompareTag("Player");
+            _hasLineOfSight = ray.collider.CompareTag("Player") && (transform.position.x - _player.transform.position.x) < 10f && (transform.position.x - _player.transform.position.x) < 10f;
            
             if (_hasLineOfSight)
             {
@@ -64,10 +64,12 @@ public class EnemyRaycast : MonoBehaviour
             {
                 Debug.DrawRay(transform.position, LastSeenPos - (Vector2)transform.position, Color.yellow);
                 Debug.DrawRay(transform.position, _player.transform.position - transform.position, Color.red);
+
             }
             else
             {
                 Debug.DrawRay(transform.position, _player.transform.position - transform.position, Color.red);
+
             }
         }
     }
