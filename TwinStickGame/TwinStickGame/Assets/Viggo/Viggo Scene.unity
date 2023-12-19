@@ -130,41 +130,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 168421557051892235, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: Both
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 168421557051892235, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: Speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 168421557051892235, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 168421557051892235, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: Vertical
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 168421557051892235, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: vertical
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 168421557051892235, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: BackAndForthVertical
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 168421557051892235, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: BackAndForthHorizontal
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 605720579017871920, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 605720579017871921, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: m_Constraints
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 605720579017871932, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
       propertyPath: m_RootOrder
@@ -210,38 +178,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 605720579017871934, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 605720579017871934, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 605720579017871934, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 605720579017871934, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 605720579017871934, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 605720579017871935, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: m_Size.x
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 605720579017871935, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: m_Size.y
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 605720579017871935, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 70632ddfe8e71b04b8f90ef7e29a9e98, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
 --- !u!1 &342536774 stripped
@@ -424,10 +360,6 @@ PrefabInstance:
       propertyPath: Cam
       value: 
       objectReference: {fileID: 1475029920}
-    - target: {fileID: 1140631489611061501, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0ccc508108fa6ed4fa11b4a467d7f609, type: 3}
     - target: {fileID: 1140631489611061502, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
       propertyPath: m_Name
       value: Player
