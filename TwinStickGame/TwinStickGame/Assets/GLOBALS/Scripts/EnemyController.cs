@@ -13,8 +13,7 @@ public class EnemyController : MonoBehaviour
     public float BackAndForthVertical = 5f;
     public float BackAndForthHorizontal = 5f;
 
-    public static bool Idle = true;
-    public static bool MoveToLastSeenPos = false;
+    public static int Idle = 1;
 
     Rigidbody2D _rigidbody2D;
     Vector2 _lastPos;
@@ -33,8 +32,8 @@ void Start()
 
     void FixedUpdate()
     {
-        
 
+        Debug.Log(Idle);
 
         
 
@@ -49,7 +48,7 @@ void Start()
     {
         Vector2 position = _rigidbody2D.position;
 
-        if (Idle)
+        if (Idle == 1)
         {
             if (Vertical && !Both)
             {
@@ -74,27 +73,22 @@ void Start()
             _lastPos = _rigidbody2D.position;
             _rigidbody2D.MovePosition(position);
         }
-        else if (!Idle)
+        else if (Idle == 0)
         {
             Transform target = GameObject.Find("Player").transform;
             
             Vector2 lookDir = (Vector2)target.position - _rigidbody2D.position;
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
             _rigidbody2D.rotation = angle;
-            Debug.Log(angle);
-
+            
             _rigidbody2D.velocity = transform.up * Speed;
         }
-
-        if (MoveToLastSeenPos)
+        else if (Idle == 2)
         {
-            Vector2 target = EnemyRaycast.LastSeenPos;
-
-            Vector2 lookDir = target - _rigidbody2D.position;
+            Vector2 lookDir = EnemyRaycast.LastSeenPos - _rigidbody2D.position;
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
             _rigidbody2D.rotation = angle;
-            Debug.Log(angle);
-
+            
             _rigidbody2D.velocity = transform.up * Speed;
         }
     }
