@@ -119,6 +119,9 @@ MonoBehaviour:
   player: {fileID: 1140631489611061490}
   minThreshold: 0.5
   maxThreshold: 5
+  joystickMulti: {x: 0, y: 0, z: 0}
+  joystickInput: {x: 0, y: 0, z: 0}
+  joystickResult: {x: 0, y: 0, z: 0}
 --- !u!1 &1140631489611061502
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +135,7 @@ GameObject:
   - component: {fileID: 1140631489611061500}
   - component: {fileID: 1140631489611061503}
   - component: {fileID: 1140631489611061491}
+  - component: {fileID: 3656435400905268770}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -264,3 +268,15 @@ MonoBehaviour:
   gameActive: 0
   dmgCooldown:
     cooldownTime: 1
+--- !u!114 &3656435400905268770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140631489611061502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeab012b90bbbcc4fa51294eba74f5ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
