@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8515557065672041958}
   - component: {fileID: 5222044930285936189}
   - component: {fileID: 5968145790730620752}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,8 +541,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1918653817
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 9151304254343570958}
   - component: {fileID: 6553444555751508370}
   - component: {fileID: 631559263354507534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap_wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1146,8 +1146,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 654061579
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
