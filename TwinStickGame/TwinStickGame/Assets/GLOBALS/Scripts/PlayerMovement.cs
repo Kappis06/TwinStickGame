@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Act();
 
-            if (restartAnytime && Input.GetKey(KeyCode.R))
+            if (restartAnytime && Input.GetButton("Restart"))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
         else
         {
-            if (Input.GetKey(KeyCode.R))
+            if (Input.GetButton("Restart"))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
@@ -136,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Rb.MovePosition(Rb.position + _movement * _playerSpeed * Time.fixedDeltaTime);
 
-        Vector2 lookDir = _mousePos - Rb.position;
+        Vector2 lookDir = new Vector2(Input.GetAxisRaw("Horizontal_R"), Input.GetAxisRaw("Vertical_R"))/*_mousePos - Rb.position*/;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         Rb.rotation = angle;
     }

@@ -18,7 +18,7 @@ public class MouseAim : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetAxisRaw("Aim") > 0.5)
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Aim"))
             threshold = maxThreshold;
         else
             threshold = minThreshold;
