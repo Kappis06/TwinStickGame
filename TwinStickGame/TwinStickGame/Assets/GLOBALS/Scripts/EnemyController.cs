@@ -13,9 +13,11 @@ public class EnemyController : MonoBehaviour
     public float BackAndForthVertical = 5f;
     public float BackAndForthHorizontal = 5f;
 
+    public static bool Idle = true;
+    public static bool MoveToLastSeenPos = false;
+
     Rigidbody2D _rigidbody2D;
     Vector2 _lastPos;
-   public  bool _idle = true;
     
 
 // Start is called before the first frame update
@@ -47,7 +49,7 @@ void Start()
     {
         Vector2 position = _rigidbody2D.position;
 
-        if (_idle)
+        if (Idle)
         {
             if (Vertical && !Both)
             {
@@ -72,7 +74,7 @@ void Start()
             _lastPos = _rigidbody2D.position;
             _rigidbody2D.MovePosition(position);
         }
-        else if (!_idle)
+        else if (!Idle)
         {
             Transform target = GameObject.Find("Player").transform;
             
@@ -84,5 +86,16 @@ void Start()
             _rigidbody2D.velocity = transform.up * Speed;
         }
 
+        if (MoveToLastSeenPos)
+        {
+            Vector2 target = EnemyRaycast.LastSeenPos;
+
+            Vector2 lookDir = target - _rigidbody2D.position;
+            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+            _rigidbody2D.rotation = angle;
+            Debug.Log(angle);
+
+            _rigidbody2D.velocity = transform.up * Speed;
+        }
     }
 }
