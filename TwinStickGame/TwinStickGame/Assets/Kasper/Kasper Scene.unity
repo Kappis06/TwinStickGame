@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 1519144393}
   - component: {fileID: 1519144392}
   - component: {fileID: 1519144391}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,6 +589,10 @@ PrefabInstance:
       propertyPath: Cam
       value: 
       objectReference: {fileID: 206177725}
+    - target: {fileID: 1140631489611061491, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
+      propertyPath: playerHealthMax
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1140631489611061502, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
       propertyPath: m_Name
       value: Player
