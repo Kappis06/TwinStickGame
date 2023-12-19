@@ -10,7 +10,9 @@ public class EnemyRaycast : MonoBehaviour
     public static Vector2 LastSeenPos = new Vector2(0, 0);
 
     bool _onLastSeenPos = true;
-    
+
+    RaycastHit2D ray;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,28 +42,28 @@ public class EnemyRaycast : MonoBehaviour
             EnemyController.Idle = 1;
             _onLastSeenPos = true;
         }
-        Debug.Log(_onLastSeenPos + "    Last");
     }
-
+    
     private void FixedUpdate()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, _player.transform.position - transform.position);
+        ray = Physics2D.Raycast(transform.position, _player.transform.position - transform.position);
+        //Physics2D.CapsuleCast(transform.position, new Vector2(10, 5),  )
+
         if (ray.collider != null)
         {
-            _hasLineOfSight = ray.collider.CompareTag("Player") && Mathf.Sqrt(Mathf.Pow((_player.transform.position.x - transform.position.x), 2) + 
-                                                                                                                        Mathf.Pow((_player.transform.position.y - transform.position.y), 2)) < 10;
+            _hasLineOfSight = ray.collider.CompareTag("Player");
            
             if (_hasLineOfSight)
             {
                 Debug.DrawRay(transform.position, _player.transform.position - transform.position, Color.green);
                 LastSeenPos = _player.transform.position;
-                Debug.Log(LastSeenPos);
             }
             else if (Mathf.Abs(LastSeenPos.x - transform.position.x) > 0.3f &&
                         Mathf.Abs(LastSeenPos.y - transform.position.y) > 0.3f &&
                         !_onLastSeenPos)
             {
                 Debug.DrawRay(transform.position, LastSeenPos - (Vector2)transform.position, Color.yellow);
+                Debug.DrawRay(transform.position, _player.transform.position - transform.position, Color.red);
             }
             else
             {

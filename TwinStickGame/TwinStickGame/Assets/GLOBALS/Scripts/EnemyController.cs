@@ -7,13 +7,25 @@ using UnityEngine.UIElements;
 
 public class EnemyController : MonoBehaviour
 {
-    public float Speed = 2.0f;
+    public float IdleSpeed = 1.0f;
+    public float HuntPlaySpeed = 3.0f;
+    public float LasSeenHuntSpeed = 2.5f;
     public bool Vertical;
     public bool Both;
     public float BackAndForthVertical = 5f;
     public float BackAndForthHorizontal = 5f;
 
     public static int Idle = 1;
+    static float _angle;
+
+    public static float Angle
+    {
+        get
+        {
+            return _angle;
+        }
+    }
+
 
     Rigidbody2D _rigidbody2D;
     Vector2 _lastPos;
@@ -32,13 +44,7 @@ void Start()
 
     void FixedUpdate()
     {
-
-        Debug.Log(Idle);
-
-        
-
         Act();
-       
     }
 
     /// <summary>
@@ -48,48 +54,48 @@ void Start()
     {
         Vector2 position = _rigidbody2D.position;
 
-        if (Idle == 1)
+        if (Idle == 1) //Idler on one position
         {
             if (Vertical && !Both)
             {
                 //position.y = position.y + Time.deltaTime * Speed * _direction;
-                position.y = position.y + Mathf.Sin(Time.fixedTime * Speed) * (BackAndForthVertical / 100);
+                position.y = position.y + Mathf.Sin(Time.fixedTime * IdleSpeed) * (BackAndForthVertical / 100);
             }
             else if (Both && !Vertical)
             {
-                position.y = position.y + Mathf.Sin(Time.fixedTime * Speed) * (BackAndForthVertical / 100) * Speed;
-                position.x = position.x + Mathf.Cos(Time.fixedTime * Speed) * (BackAndForthHorizontal / 100) * Speed;
+                position.y = position.y + Mathf.Sin(Time.fixedTime * IdleSpeed) * (BackAndForthVertical / 100) * IdleSpeed;
+                position.x = position.x + Mathf.Cos(Time.fixedTime * IdleSpeed) * (BackAndForthHorizontal / 100) * IdleSpeed;
             }
             else
             {
                 //position.x = position.x + Time.deltaTime * Speed * _direction;
-                position.x = position.x + Mathf.Cos(Time.fixedTime * Speed) * (BackAndForthVertical / 100);
+                position.x = position.x + Mathf.Cos(Time.fixedTime * IdleSpeed) * (BackAndForthVertical / 100);
             }
 
             Vector2 lookDir = new Vector2(_rigidbody2D.position.x - _lastPos.x, _rigidbody2D.position.y - _lastPos.y);
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-            _rigidbody2D.rotation = angle;
+            _angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+            _rigidbody2D.rotation = _angle;
 
             _lastPos = _rigidbody2D.position;
             _rigidbody2D.MovePosition(position);
         }
-        else if (Idle == 0)
+        else if (Idle == 0) //Hunting player
         {
             Transform target = GameObject.Find("Player").transform;
             
             Vector2 lookDir = (Vector2)target.position - _rigidbody2D.position;
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-            _rigidbody2D.rotation = angle;
+            _angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+            _rigidbody2D.rotation = _angle;
             
-            _rigidbody2D.velocity = transform.up * Speed;
+            _rigidbody2D.velocity = transform.up * HuntPlaySpeed;
         }
-        else if (Idle == 2)
+        else if (Idle == 2) //Hunting players last seen position
         {
             Vector2 lookDir = EnemyRaycast.LastSeenPos - _rigidbody2D.position;
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-            _rigidbody2D.rotation = angle;
+            _angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+            _rigidbody2D.rotation = _angle;
             
-            _rigidbody2D.velocity = transform.up * Speed;
+            _rigidbody2D.velocity = transform.up * LasSeenHuntSpeed;
         }
     }
 }
