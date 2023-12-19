@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     Vector2 _movement;
     Vector2 _mousePos;
 
+    Vector2 lookDir;
+
     [Header("Player Stats")]
 
     float _playerSpeed;
@@ -136,7 +138,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Rb.MovePosition(Rb.position + _movement * _playerSpeed * Time.fixedDeltaTime);
 
-        Vector2 lookDir = new Vector2(Input.GetAxisRaw("Horizontal_R"), Input.GetAxisRaw("Vertical_R"))/*_mousePos - Rb.position*/;
+        if (Mathf.Abs(Input.GetAxisRaw("Horizontal_R")) > 0.5 || Mathf.Abs(Input.GetAxisRaw("Vertical_R")) > 0.5)
+        {
+            lookDir = new Vector2(Input.GetAxisRaw("Horizontal_R"), Input.GetAxisRaw("Vertical_R"))/*_mousePos - Rb.position*/;
+        }
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         Rb.rotation = angle;
     }
