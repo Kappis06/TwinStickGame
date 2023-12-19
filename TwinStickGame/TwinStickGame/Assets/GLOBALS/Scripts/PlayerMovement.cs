@@ -154,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (dmgCooldown.IsCoolingDown) return;
         
-        if ((collision.gameObject.layer == LayerMask.NameToLayer("Enemy")) && gameActive)
+        if ((collision.gameObject.tag == "Enemy") && gameActive)
         {
             playerHealth--;
 
