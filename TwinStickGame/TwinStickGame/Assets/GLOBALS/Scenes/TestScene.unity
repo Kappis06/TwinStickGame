@@ -283,6 +283,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4771166782723131866, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771166782723131866, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: -1918653817
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771166782723131866, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: 654061579
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771166782723131866, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: -419819863
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771166782723131866, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[4]
+      value: 144453687
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771166782723131866, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[5]
+      value: 2089908261
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771166782723131866, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[6]
+      value: 997596973
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
 --- !u!4 &519182371 stripped
