@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBelongings : MonoBehaviour
 {
-    public GameObject Beloning;
+    public GameObject Belonging;
 
     void Start()
     {
@@ -12,6 +12,11 @@ public class PlayerBelongings : MonoBehaviour
     }
 
     void Update()
+    {
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         
     }
