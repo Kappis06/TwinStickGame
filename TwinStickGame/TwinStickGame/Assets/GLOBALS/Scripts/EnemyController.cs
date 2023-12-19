@@ -15,9 +15,10 @@ public class EnemyController : MonoBehaviour
     float _timer;
     int _direction = 1;
     float _totalTime;
+    
 
-    // Start is called before the first frame update
-    void Start()
+// Start is called before the first frame update
+void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _timer = ChangeTime;
@@ -26,7 +27,6 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         _timer -= Time.deltaTime;
-        
 
         if (_timer < 0)
         {
