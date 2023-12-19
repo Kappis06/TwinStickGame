@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     float _timer;
     int _direction = 1;
     float _totalTime;
+    Vector2 _lastPos;
     
 
 // Start is called before the first frame update
@@ -26,13 +27,7 @@ void Start()
 
     void Update()
     {
-        _timer -= Time.deltaTime;
 
-        if (_timer < 0)
-        {
-            _direction = -_direction;
-            _timer = ChangeTime;
-        }
     }
 
     void FixedUpdate()
@@ -56,6 +51,17 @@ void Start()
             position.x = position.x + Mathf.Cos(_totalTime * Speed) * (BackAndForthVertical / 100);
         }
 
+        Act();
+        _lastPos = _rigidbody2D.position;
         _rigidbody2D.MovePosition(position);
+    }
+
+    void Act()
+    {
+        //_rigidbody2D.MovePosition(_rigidbody2D.position + _movement * _playerSpeed * Time.fixedDeltaTime);
+
+        Vector2 lookDir = new Vector2((_rigidbody2D.position.x - _lastPos.x),(_rigidbody2D.position.y - _lastPos.y));
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg ;
+        _rigidbody2D.rotation = angle;
     }
 }
