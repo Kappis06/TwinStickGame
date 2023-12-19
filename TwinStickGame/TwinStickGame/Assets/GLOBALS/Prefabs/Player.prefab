@@ -336,6 +336,7 @@ MonoBehaviour:
   Collider: {fileID: 1140631489611061500}
   Cam: {fileID: 0}
   Spawn: {fileID: 0}
+  playerHealthUI: {fileID: 0}
   PlayerStartSpeed: 5
   SprintStartTime: 0
   playerHealthMax: 3

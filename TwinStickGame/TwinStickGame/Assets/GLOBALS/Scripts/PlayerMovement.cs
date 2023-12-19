@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public Camera Cam;
 
     public GameObject Spawn;
-    //public Text playerHealthUI;
+
+    public TextMeshProUGUI playerHealthUI;
     //public GameObject bloodPrefab;
 
     Vector2 _movement;
@@ -59,8 +61,6 @@ public class PlayerMovement : MonoBehaviour
             Collider.enabled = false;
 
             //GameObject blood = Instantiate(bloodPrefab, gameObject.transform.position, gameObject.transform.rotation);
-
-            //FindObjectOfType<AudioManager>().Play("peter griffin");
 
             //blood.transform.localScale = new Vector3(1, 1, 1);
         }
@@ -135,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
 
     void UpdateUI()
     {
-        //playerHealthUI.text = playerHealth.ToString();
+        playerHealthUI.text = playerHealth.ToString() + " / " + playerHealthMax.ToString();
     }
 
     void Act()
