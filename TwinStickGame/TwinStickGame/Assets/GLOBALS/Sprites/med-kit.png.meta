@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 6f3b5766c1b4e8f47b753bdced34796b
+guid: a386e91e66b7b5c4d9cbbcb7fcde08e4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5960511037448888903
-    second: keycard_0
+      213: 7887931619765706173
+    second: med-kit_0
   - first:
-      213: -8253505599346797294
-    second: keycard_1
-  - first:
-      213: 726906479890298208
-    second: keycard_2
-  - first:
-      213: -8774647995042611741
-    second: keycard_3
+      213: -7569396212923344196
+    second: med-kit_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: keycard_0
+      name: med-kit_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 32
-        height: 32
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,41 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bd5015aac2084da0800000000000000
-      internalID: -5960511037448888903
+      spriteID: dbdd4b02400977d60800000000000000
+      internalID: 7887931619765706173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: keycard_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2159c37e268a57d80800000000000000
-      internalID: -8253505599346797294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: keycard_2
+      name: med-kit_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,29 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0657ac6979d761a00800000000000000
-      internalID: 726906479890298208
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: keycard_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ed346a73203a3680800000000000000
-      internalID: -8774647995042611741
+      spriteID: cba548caf3a14f690800000000000000
+      internalID: -7569396212923344196
       vertices: []
       indices: 
       edges: []
