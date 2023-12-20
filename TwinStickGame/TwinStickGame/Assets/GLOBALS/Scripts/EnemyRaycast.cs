@@ -16,7 +16,7 @@ public class EnemyRaycast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
+        _player = GameObject.FindGameObjectWithTag("Player") ;
     }
 
     // Update is called once per frame
@@ -51,8 +51,9 @@ public class EnemyRaycast : MonoBehaviour
 
         if (ray.collider != null)
         {
-            _hasLineOfSight = ray.collider.CompareTag("Player") && (transform.position.x - _player.transform.position.x) < 10f && (transform.position.x - _player.transform.position.x) < 10f;
-           
+            _hasLineOfSight = ray.collider.CompareTag("Player") && Mathf.Sqrt(Mathf.Pow(_player.transform.position.x - transform.position.x, 2) +
+                                                                                                                        Mathf.Pow(_player.transform.position.y - transform.position.y, 2)) < 10; ;
+
             if (_hasLineOfSight)
             {
                 Debug.DrawRay(transform.position, _player.transform.position - transform.position, Color.green);
