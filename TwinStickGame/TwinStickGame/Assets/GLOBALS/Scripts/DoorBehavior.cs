@@ -14,18 +14,19 @@ public class DoorBehavior : MonoBehaviour
     GameObject _playerKeycard;
     GameObject _childerens;
 
-    Animator[] _animators;
+    Animator _animator;
 
 
 
-    private bool _openDoor;
+    bool _openDoor;
+    bool _doorIsOpen = false;
 
     // Start is called before the first frame update
     void Start()
     {
         _colider.enabled = true;
         _player = GameObject.FindGameObjectWithTag("Player");
-        _animators = GetComponentsInChildren<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -44,14 +45,12 @@ public class DoorBehavior : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (_openDoor)
+        if (_openDoor && !_doorIsOpen)
         {
             _colider.enabled = false;
+            _doorIsOpen = true;
             Destroy(_playerKeycard);
-            for (int i = 0; i < _animators.Length; i++)
-            {
-                _animators[i].SetBool("Open", true);
-            }
+            _animator.SetBool("Open", true);
         }
     }
 }
