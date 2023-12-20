@@ -7,8 +7,13 @@ public class DoorBehavior : MonoBehaviour
 
     public Collision2D _collision;
     public Collider2D _colider;
+    
 
-    [SerializeField] public bool coliding = false;
+
+    GameObject _player;
+    GameObject _playerKeycard;
+
+
 
     private bool _openDoor;
 
@@ -16,20 +21,21 @@ public class DoorBehavior : MonoBehaviour
     void Start()
     {
         _colider.enabled = true;
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        _openDoor = Input.GetKey(KeyCode.JoystickButton1);
-        coliding = false;
+        _playerKeycard = _player.GetComponent<PlayerBelongings>().Keycard;
+        _openDoor = Input.GetKey(KeyCode.JoystickButton1) && _playerKeycard != null;
+
+
     }
 
     void FixedUpdate()
     {
         
-        
-
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -37,7 +43,7 @@ public class DoorBehavior : MonoBehaviour
         if (_openDoor)
         {
             _colider.enabled = false;
+            Destroy(_playerKeycard);
         }
-        coliding = true;
     }
 }
