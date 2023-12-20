@@ -135,7 +135,10 @@ public class PlayerMovement : MonoBehaviour
 
     void UpdateUI()
     {
-        playerHealthUI.text = playerHealth.ToString() + " / " + playerHealthMax.ToString();
+            playerHealthUI.text = playerHealth.ToString() + " / " + playerHealthMax.ToString();
+
+         
+        
     }
 
     void Act()
