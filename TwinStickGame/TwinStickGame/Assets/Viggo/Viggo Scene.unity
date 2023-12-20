@@ -130,14 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 168421557051892235, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: Both
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 168421557051892235, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: Speed
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 605720579017871920, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -185,10 +177,6 @@ PrefabInstance:
     - target: {fileID: 605720579017871932, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5321382106188254557, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bb06193629622246b0e9e991a173f97, type: 3}
@@ -433,14 +421,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 534706380, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 534706380, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[5]
-      value: -290533111
-      objectReference: {fileID: 0}
     - target: {fileID: 1140631489111795144, guid: 65fd5f39a3e7e3648a8fa2baf35b9c7a, type: 3}
       propertyPath: cam
       value: 
