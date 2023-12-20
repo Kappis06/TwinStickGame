@@ -38,12 +38,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
-<<<<<<< HEAD
+//<<<<<<< HEAD
     public void LoadMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("TitleScreen");
     }
-=======
->>>>>>> parent of 7ac093a (Merge branch 'main' of https://github.com/Kappis06/TwinStickGame)
+//=======
+//>>>>>>> parent of 7ac093a (Merge branch 'main' of https://github.com/Kappis06/TwinStickGame)
 }
