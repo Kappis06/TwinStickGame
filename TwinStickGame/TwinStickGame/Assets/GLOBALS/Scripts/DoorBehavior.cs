@@ -12,6 +12,9 @@ public class DoorBehavior : MonoBehaviour
 
     GameObject _player;
     GameObject _playerKeycard;
+    GameObject _childerens;
+
+    Animator[] _animators;
 
 
 
@@ -22,6 +25,7 @@ public class DoorBehavior : MonoBehaviour
     {
         _colider.enabled = true;
         _player = GameObject.FindGameObjectWithTag("Player");
+        _animators = GetComponentsInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -44,6 +48,10 @@ public class DoorBehavior : MonoBehaviour
         {
             _colider.enabled = false;
             Destroy(_playerKeycard);
+            for (int i = 0; i < _animators.Length; i++)
+            {
+                _animators[i].SetBool("Open", true);
+            }
         }
     }
 }
