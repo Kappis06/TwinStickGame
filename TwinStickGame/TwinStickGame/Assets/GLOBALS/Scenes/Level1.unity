@@ -219,14 +219,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2305555793576718674, guid: be505aff50e7bee429db7027e74432b3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2305555793576718674, guid: be505aff50e7bee429db7027e74432b3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 2305555793684075136, guid: be505aff50e7bee429db7027e74432b3, type: 3}
       propertyPath: m_Name
       value: SpawnAndGoal
