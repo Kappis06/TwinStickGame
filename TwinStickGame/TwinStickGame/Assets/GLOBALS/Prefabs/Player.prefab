@@ -270,7 +270,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2089908261
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 4334783836991956000, guid: fda0d3d5816c1f44b96cf0d43355b811, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -337,7 +337,7 @@ MonoBehaviour:
   Cam: {fileID: 0}
   Spawn: {fileID: 0}
   playerHealthUI: {fileID: 0}
-  PlayerStartSpeed: 5
+  PlayerStartSpeed: 2
   SprintStartTime: 0
   playerHealthMax: 3
   restartAnytime: 1
