@@ -160,5 +160,11 @@ public class PlayerMovement : MonoBehaviour
 
             dmgCooldown.StartCooldown();
         }
+
+        if ((collision.gameObject.tag == "Medkit") && gameActive && playerHealth < playerHealthMax)
+        {
+            Destroy(collision.gameObject);
+            playerHealth++;
+        }
     }
 }
