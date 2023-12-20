@@ -14,14 +14,4 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-
-    public void HelpScreen()
-    {
-        
-    }
-
-    public void CreditsScreen()
-    {
-
-    }
 }

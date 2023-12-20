@@ -227,14 +227,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2305555793576718674, guid: be505aff50e7bee429db7027e74432b3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2305555793576718674, guid: be505aff50e7bee429db7027e74432b3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 2305555793684075136, guid: be505aff50e7bee429db7027e74432b3, type: 3}
       propertyPath: m_Name
       value: SpawnAndGoal
@@ -569,8 +561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
+  m_HorizontalAxis: Horizontal_L
+  m_VerticalAxis: Vertical_L
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
