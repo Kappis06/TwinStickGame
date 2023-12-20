@@ -117,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Sprinting()
     {
-        if (Input.GetKey(KeyCode.JoystickButton3) && _sprintTime >= 0)
+        if (Input.GetButton("Run") && _sprintTime >= 0)
         {
             _playerSpeed = 10;
             _sprintTime -= Time.deltaTime; 

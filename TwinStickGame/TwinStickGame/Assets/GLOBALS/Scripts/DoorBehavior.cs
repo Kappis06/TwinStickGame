@@ -33,7 +33,7 @@ public class DoorBehavior : MonoBehaviour
     void Update()
     {
         _playerKeycard = _player.GetComponent<PlayerBelongings>().Keycard;
-        _openDoor = Input.GetKey(KeyCode.JoystickButton1) && _playerKeycard != null;
+        _openDoor = Input.GetButton("Interact") && _playerKeycard != null;
 
 
     }
