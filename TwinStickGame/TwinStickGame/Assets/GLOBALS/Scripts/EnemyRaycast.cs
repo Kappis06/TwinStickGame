@@ -5,21 +5,18 @@ using UnityEngine;
 
 public class EnemyRaycast : MonoBehaviour
 {
-    GameObject _player;
-    bool _hasLineOfSight = false;
+    private GameObject _player;
+    private bool _hasLineOfSight = false;
     public static Vector2 LastSeenPos = new Vector2(0, 0);
+    private bool _onLastSeenPos = true;
 
-    bool _onLastSeenPos = true;
+    
 
-     
-
-    // Start is called before the first frame update
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player") ;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_hasLineOfSight)
@@ -44,7 +41,7 @@ public class EnemyRaycast : MonoBehaviour
         }
     }
     
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, _player.transform.position - transform.position);
 

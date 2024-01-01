@@ -18,30 +18,26 @@ public class PlayerMovement : MonoBehaviour
     public TextMeshProUGUI playerHealthUI;
     //public GameObject bloodPrefab;
 
-    Vector2 _movement;
-    Vector2 _mousePos;
 
-    Vector2 lookDir;
 
     [Header("Player Stats")]
 
-    float _playerSpeed;
+    private float _playerSpeed;
     public float PlayerStartSpeed = 5;
 
-    float _sprintTime;
+    private float _sprintTime;
     public float SprintStartTime = 5;
 
     private float playerHealth;
-
     public float playerHealthMax;
-
-    public bool restartAnytime = false;
-
-    [HideInInspector] public bool gameActive;
-
     [SerializeField] private Cooldown dmgCooldown;
 
-    
+    public bool restartAnytime = false;
+    [HideInInspector] public bool gameActive;
+
+    private Vector2 _movement;
+    private Vector2 _mousePos;
+    private Vector2 lookDir;
 
 
 
@@ -94,8 +90,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-
     void Prepare()
     {
         gameActive = true;
@@ -135,10 +129,7 @@ public class PlayerMovement : MonoBehaviour
 
     void UpdateUI()
     {
-            playerHealthUI.text = playerHealth.ToString() + " / " + playerHealthMax.ToString();
-
-         
-        
+        playerHealthUI.text = playerHealth.ToString() + " / " + playerHealthMax.ToString();
     }
 
     void Act()
@@ -149,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
         {
             lookDir = new Vector2(Input.GetAxisRaw("Horizontal_R"), Input.GetAxisRaw("Vertical_R"))/*_mousePos - Rb.position*/;
         }
+
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }

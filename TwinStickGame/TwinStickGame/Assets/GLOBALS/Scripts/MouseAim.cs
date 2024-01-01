@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class MouseAim : MonoBehaviour
 {
-    [SerializeField] Camera cam;
-    [SerializeField] Transform player;
+    [SerializeField] private Camera cam;
+    [SerializeField] private Transform player;
     
-    [SerializeField] float minThreshold;
-    [SerializeField] float maxThreshold;
+    [SerializeField] private float minThreshold;
+    [SerializeField] private float maxThreshold;
 
-    float threshold;
+    private float threshold;
 
     public Vector3 joystickInput;
     public Vector3 mousePos;
     public Vector3 targetPos;
+
+
 
     void FixedUpdate()
     {

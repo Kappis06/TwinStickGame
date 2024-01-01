@@ -7,14 +7,11 @@ public class PlayerBelongings : MonoBehaviour
     public GameObject Keycard;
     private Collider2D _collider;
 
+
+
     void Start()
     {
         _collider = GetComponent<Collider2D>();
-    }
-
-    void Update()
-    {
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

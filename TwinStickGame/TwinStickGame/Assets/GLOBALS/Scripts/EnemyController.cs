@@ -9,14 +9,19 @@ public class EnemyController : MonoBehaviour
 {
     public float IdleSpeed = 1.0f;
     public float HuntPlaySpeed = 3.0f;
-    public float LasSeenHuntSpeed = 2.5f;
+    public float LastSeenHuntSpeed = 2.5f;
     public bool Vertical;
     public bool Both;
     public float BackAndForthVertical = 5f;
     public float BackAndForthHorizontal = 5f;
 
     public static int Idle = 1;
-    static float _angle;
+    public static float _angle;
+
+    private Rigidbody2D _rigidbody2D;
+    private Vector2 _lastPos;
+
+
 
     public static float Angle
     {
@@ -27,19 +32,10 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    Rigidbody2D _rigidbody2D;
-    Vector2 _lastPos;
-    
 
-// Start is called before the first frame update
-void Start()
+    void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-    }
-
-    void Update()
-    {
-
     }
 
     void FixedUpdate()
@@ -48,13 +44,13 @@ void Start()
     }
 
     /// <summary>
-    /// Rotates the sprite depending on the velocity
+    /// Rotates the sprite according to the velocity
     /// </summary>
     void Act()
     {
         Vector2 position = _rigidbody2D.position;
 
-        if (Idle == 1) //Idler on one position
+        if (Idle == 1) //Idle on one position
         {
             if (Vertical && !Both)
             {
@@ -95,7 +91,7 @@ void Start()
             _angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
             _rigidbody2D.rotation = _angle;
             
-            _rigidbody2D.velocity = transform.up * LasSeenHuntSpeed;
+            _rigidbody2D.velocity = transform.up * LastSeenHuntSpeed;
         }
     }
 }

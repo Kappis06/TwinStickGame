@@ -7,10 +7,7 @@ public class GoalController : MonoBehaviour
 {
     private bool playerInGoal = false;
 
-    void Start()
-    {
-        
-    }
+
 
     void Update()
     {
@@ -32,7 +29,7 @@ public class GoalController : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            playerInGoal= false;
+            playerInGoal = false;
         }
     }
 }
